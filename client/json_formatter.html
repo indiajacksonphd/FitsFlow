@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JSON Viewer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1e1e1e;
+      color: #f0f0f0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #4fc3f7;
+    }
+
+    #json-container {
+      background: #2b2b2b;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      max-height: 80vh;
+    }
+
+
+
+
+
+  </style>
+
+  <!-- CSS for JSON Formatter -->
+  <link href="json-formatter.css" rel="stylesheet"/>
+</head>
+<body>
+
+  <h1>JSON Viewer</h1>
+  <div id="json-container"></div>
+
+  <!-- JS for JSON Formatter (UMD build) -->
+  <script src="json-formatter.js"></script>
+
+  <script>
+    const data = {
+      mission: "Artemis II",
+      crew: ["Reid Wiseman", "Victor Glover", "Christina Koch", "Jeremy Hansen"],
+      launchDate: "2025-11-01T00:00:00Z",
+      destination: "Lunar flyby",
+      instruments: {
+        capsule: "Orion",
+        booster: "SLS Block 1"
+      }
+    };
+
+    const formatter = new JSONFormatter(data, 0, { theme: 'dark' });
+    document.getElementById("json-container").appendChild(formatter.render());
+
+
+  </script>
+
+</body>
+</html>
