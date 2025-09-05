@@ -1,4 +1,4 @@
-![static_arch](https://github.com/user-attachments/assets/a0ac186d-3952-42bb-a111-301b2bba6f7c)# FitsFlow
+# FitsFlow
 
 FitsFlow is a browser-based application that takes a solar FITS image and returns machine-learning ready outputs.  
 
