@@ -4,7 +4,7 @@ s3 = boto3.client("s3")
 lambda_client = boto3.client("lambda")
 
 BUCKET = "<BUCKET_NAME>"
-MAIN_FUNCTION = "FitsFlow-2"
+MAIN_FUNCTION = "<MAIN_FUNCTION>"
 
 def lambda_handler(event, _ctx):
     q = event.get("queryStringParameters") or {}
