@@ -7,7 +7,7 @@ s3 = boto3.client("s3")
 def lambda_handler(event, context):
     session_id = event["session_id"]
     fname = event["fname"]  # Required
-    bucket = "helioconvert-sdo"
+    bucket = "<BUCKET_NAME>"
     base_key = f"temp/{session_id}/processed"
 
     # Define relative paths for ASDF tree
