@@ -4,7 +4,7 @@ from datetime import datetime, timedelta, timezone
 import daily_videos  # <-- your original file
 
 # ---- ENV (set these in Lambda console) ----
-BUCKET_NAME   = os.environ.get("BUCKET_NAME", "helioconvert-sdo")
+BUCKET_NAME   = os.environ.get("BUCKET_NAME", "<BUCKET_NAME>")
 DEST_FOLDER   = os.environ.get("DEST_FOLDER", "daily_videos")
 DAYS_BACK     = int(os.environ.get("DAYS_BACK", "2"))            # 1=yesterday
 TEMP_PREFIX   = os.environ.get("TEMP_PREFIX", "temp/")           # S3 temp/ cleaner
