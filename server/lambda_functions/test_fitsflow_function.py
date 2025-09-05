@@ -25,7 +25,7 @@ import gc
 s3 = boto3.client("s3")
 lambda_client = boto3.client("lambda")
 
-bucket = "helioconvert-sdo"
+bucket = "<BUCKET_NAME>"
 
 
 def save_log_to_s3(session_id, fname=None, message=""):
@@ -406,7 +406,7 @@ def process_fits_info(file_paths, bucket, session_id, duration_minutes=15):
         hek_data = fetch_hek_events(dt_obs, bucket, session_id, fname, duration_minutes=duration_minutes)
 
         response = lambda_client.invoke(
-            FunctionName='FitsFlow-2-ASDF',
+            FunctionName='<ASDF_FUNCTION>',
             InvocationType='RequestResponse',
             Payload=json.dumps({
                 "session_id": session_id,
