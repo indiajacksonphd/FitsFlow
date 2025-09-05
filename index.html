@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>FITSFlow</title>
+  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jszip-utils@0.1.0/dist/jszip-utils.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="json-formatter.js"></script>
+  
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+    <link href="fitsFlow.css" rel="stylesheet">
+    <link href="json-formatter.css" rel="stylesheet">
+  </head>
+  
+  <body onload="loadStitchedSDOVideo()">
+      
+      
+
+      <div id="app-container">
+          <!-- Top 75% -->
+          <div id="main-content">
+            <div id="polling-overlay"></div>
+              <!--****************** NAVIGATION BAR ******************/-->
+
+              <div id="navbar">
+                  <div class="nav-title">FITSFlow</div>
+                  <div class="nav-links">
+                      <a href="#" onclick="showOverlay('about')">About</a>
+                      <a href="#" onclick="showOverlay('spacecraft')">Spacecraft</a>
+                      <a href="#" onclick="showOverlay('supported')">Supported Data</a>
+                      <a href="#" onclick="showOverlay('samples')">Sample Downloads</a>
+                  </div>
+              </div>
+      
+              <!-- Overlay Panels -->
+              <div id="overlay" class="overlay hidden">
+                  <div class="overlay-content">
+                      <span class="closebtn" onclick="hideOverlay()">&times;</span>
+                      <div id="overlay-text">Overlay Content</div>
+                  </div>
+              </div>
+
+                <div id="wavelength-popup">
+                    <h3 style="text-align: center; margin-top: 0;">SDO AIA & HMI Channels</h3>
+
+                  <table style="width: 100%; border-collapse: collapse; font-size: 0.9em; margin-top: 10px;">
+                    <thead>
+                        <tr style="color: #fff; text-align: left; background-color: #333;">
+                            <th style="padding: 10px 18px;">Wavelength / Type</th>
+                            <th style="padding: 10px 18px; min-width: 180px;">Band Type</th>
+                            <th style="padding: 10px 18px; min-width: 220px;">Primary Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background-color: #2a2a2a;">
+                            <td style="padding: 10px 18px;"><strong>94</strong></td>
+                            <td>EUV (Fe XVIII)</td>
+                            <td>Hot flaring regions (~6.3 MK)</td>
+                        </tr>
+                        <tr style="background-color: #1f1f1f;">
+                            <td style="padding: 10px 18px;"><strong>131</strong></td>
+                            <td>EUV (Fe VIII/XXI)</td>
+                            <td>Flares & hot plasma</td>
+                        </tr>
+                        <tr style="background-color: #2a2a2a;">
+                            <td style="padding: 10px 18px;"><strong>171</strong></td>
+                            <td>EUV (Fe IX)</td>
+                            <td>Quiet corona, loops (~0.6 MK)</td>
+                        </tr>
+                        <tr style="background-color: #1f1f1f;">
+                            <td style="padding: 10px 18px;"><strong>193</strong></td>
+                            <td>EUV (Fe XII/XXIV)</td>
+                            <td>Corona & flaring regions</td>
+                        </tr>
+                        <tr style="background-color: #2a2a2a;">
+                            <td style="padding: 10px 18px;"><strong>211</strong></td>
+                            <td>EUV (Fe XIV)</td>
+                            <td>Active regions (~2 MK)</td>
+                        </tr>
+                        <tr style="background-color: #1f1f1f;">
+                            <td style="padding: 10px 18px;"><strong>304</strong></td>
+                            <td>EUV (He II)</td>
+                            <td>Chromosphere & prominences</td>
+                        </tr>
+                        <tr style="background-color: #2a2a2a;">
+                            <td style="padding: 10px 18px;"><strong>335</strong></td>
+                            <td>EUV (Fe XVI)</td>
+                            <td>Hot active regions (~2.5 MK)</td>
+                        </tr>
+                        <tr style="background-color: #1f1f1f;">
+                            <td style="padding: 10px 18px;"><strong>1600</strong></td>
+                            <td>UV (C IV + continuum)</td>
+                            <td>Transition region</td>
+                        </tr>
+                        <tr style="background-color: #2a2a2a;">
+                            <td style="padding: 10px 18px;"><strong>1700</strong></td>
+                            <td>Visible continuum</td>
+                            <td>Photosphere</td>
+                        </tr>
+                        <tr style="background-color: #1f1f1f;">
+                            <td style="padding: 10px 18px;"><strong>1400</strong></td>
+                            <td>UV (Si IV)</td>
+                            <td>Transition region (faint in AIA)</td>
+                        </tr>
+                        <tr style="background-color: #2a2a2a;">
+                            <td style="padding: 10px 18px;"><strong>HMI Continuum</strong></td>
+                            <td>Visible Light</td>
+                            <td>Photospheric intensity (sunspot structure)</td>
+                        </tr>
+                        <tr style="background-color: #1f1f1f;">
+                            <td style="padding: 10px 18px;"><strong>HMI Magnetogram</strong></td>
+                            <td>Magnetic Field</td>
+                            <td>Line-of-sight photospheric magnetism</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                
+
+
+                    <div style="text-align: center; margin-top: 15px;">
+                        <button onclick="closeWavelengthTable()" style="padding: 6px 12px; border: none; background: #5ccaff; color: #000; border-radius: 4px; cursor: pointer;">
+                            Close
+                        </button>
+                    </div>
+                </div>
+
+              <!--****************** SIDE MENU ******************/-->
+              <div id="content-row">
+                  <div id="sidebar">
+                    <div>
+
+                      <div id="storageBarWrapper">
+                        <label for="storageBar">Storage Used: <span id="storageText">0 / 170 MB</span></label>
+                        <progress id="storageBar" value="0" max="170"></progress>
+                      </div>
+
+                      <div id="fits-upload-container" style="margin-top: 20px; position: relative;">
+                          <label for="fitsUpload" class="upload-label">📤 Upload FITS File(s)</label>
+                          <input type="file" id="fitsUpload" multiple accept=".fits" style="display: none;">
+                          <br><br>
+                          <div class="fitsFilesOverlay" id="fitsFileList">
+Your selected FITS files<br>will load here...
+                          </div>
+
+                      </div>
+                    </div>
+                    
+                    <div id="fitsButtonRow" style="margin-bottom: 30px;">
+                        <br>
+                        <button id="resetFitsUpload" class="download-button" style="display: none;">Reset</button>
+                        <button id="submitFitsUpload" style="display: none;" class="download-button submitBtn">Submit</button>
+                        <button id="downloadButton" style="display: none;" class="download-button">Download ZIP</button>
+                    </div>
+
+                    <div class="info">
+
+                          India Jackson, Phd     
+                          <a href="https://orcid.org/0009-0001-5404-8689" target="_blank" style="margin-left: 0.5em;">
+                            <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" class="pulse-glow" style="vertical-align: middle; width: 16px; height: 16px;">
+                          </a>
+                          <a href="https://github.com/indiajacksonphd" target="_blank" style="margin-left: 0.5em;">
+                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="pulse-glow" style="vertical-align: middle; width: 16px; height: 16px;">
+                          </a> 
+                          <br>
+                          ijackson1@gsu.edu<br>
+                          National Science Foundation<br>
+                          Award Number: 2444918-AGS-PRF
+                    </div>
+                  </div>
+
+      <!--****************** MAIN SECTION ******************/-->
+                  <div id="main-panels">
+                      <div id="panel-wrapper">
+                          <!-- LEFT PANEL -->
+                          <div class="column">
+                              <div class="panel-label" id="image-info-label">
+                                <strong id="image-info-text">Image Info:</strong>
+                                <div class="tab-btn-image-container">
+                                  <button id="colorBtn" class="tab-btn-image active" disabled onclick="switchTab('video')">Color</button>
+                                  <button id="grayBtn" class="tab-btn-image" disabled onclick="switchTab('bounding')">Gray</button>
+                                </div>
+                              </div>
+
+                              <div class="panel" id="image-panel">
+                                  <div class="tab-content" id="video-tab">
+
+                                <div id="video-placeholder-SDO" class="video-placeholder"></div>
+
+
+                                      <img class="picHolder" id="carouselImage" alt="SDO Image" style="display: none;">
+                                  </div>
+                              
+                                  <div class="tab-content" id="bounding-tab" style="display:none">
+
+                                <div id="video-placeholder-JSOC" class="video-placeholder">
+                                    <video id="stitchedPlayer" width="512" controls autoplay muted playsinline>
+                                      Your browser does not support the video tag.
+                                    </video>
+                                  </div>
+                                  
+
+                                    <img class="picHolder" id="jsocImage" alt="JSOC Image" style="display: none;">
+                                  </div>
+                              </div>
+                          </div>
+                 
+                          <!-- RIGHT PANEL -->
+                          <div class="column">
+                              <div class="panel-label" id="header-info-label">
+                                  <strong id="header-info-text">Header  and HEK Info:</strong>
+                                  <div class="tab-btn-container">
+                                      <button id="headerBtn" class="tab-btn active" disabled onclick="switchHeaderTab('header', this)">Header</button>
+                                      <!--<button class="tab-btn" onclick="switchHeaderTab('donki', this)">DONKI</button>-->
+                                      <button id="hekBtn" class="tab-btn" disabled onclick="switchHeaderTab('hek', this)">HEK</button>
+                                    </div>
+                              </div>
+
+                              <div class="panel" id="header-panel">
+                                    <div class="tab-content" id="header-tab">
+
+                                      <div class="container">
+                                          
+                                          <img src="black_square.png" id="headerImage" alt="Solar Image">
+                                          <pre class="headerOverlay" id="headerOverlay">FITS header info will appear here after selecting an image.</pre>
+                                          
+                                      </div>
+                                  </div>
+
+                                  <div class="tab-content" id="hek-tab" style="display:none">
+                                      <div class="container">
+                                          
+                                      <img src="black_square.png" id="headerImage" alt="Solar Image">
+                                      <pre class="headerOverlay" id="hekOverlay">HEK metadata will appear here after selecting an image.</pre>
+                                          
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="control-panel" id="controls">
+                          <button onclick="prevImage()" id="prevBtn" disabled>⏮️ Prev</button>
+                          <button onclick="togglePlay()" id="playBtn" disabled>▶️ Play</button>
+                          <button onclick="nextImage()" id="nextBtn" disabled>⏭️ Next</button>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+
+          <!-- Bottom 25% -->
+          <div id="terminal">
+              <div id="terminal-output-header"></div>
+              <div id="terminal-scroll-wrapper">
+                  <div id="terminal-output"></div>
+              </div>
+          </div>
+
+          <audio id="done-sound" preload="auto">
+            <source src="elevatording.ogg" type="audio/ogg">
+            <source src="elevatording.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          
+
+      </div>
+
+    <div id="mobile-blocker">
+        <div class="mobile-content">
+          <img src="sad_sun.png" alt="Sad Sun" class="sad-sun" />
+          <h2>⚠️ Mobile View Not Supported...Yet</h2>
+          <p>Please use a larger screen to use FitsFlow.</p>
+        </div>
+      </div>
+      
+  </body>
+<script src="fitsFlow.js" defer></script>
+
+</html>
