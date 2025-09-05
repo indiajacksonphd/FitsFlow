@@ -6,7 +6,7 @@ from test_fitsflow_function import process_fits_info, save_log_to_s3
 def lambda_handler(event, context):
 
     session_id = event.get("queryStringParameters", {}).get("session_id", "missing")
-    bucket = "helioconvert-sdo"
+    bucket = "<BUCKET_NAME>"
     prefix = f"temp/{session_id}/fits/"
     local_dir = "/tmp/temp_fits"
     os.makedirs(local_dir, exist_ok=True)
@@ -23,7 +23,7 @@ def lambda_handler(event, context):
             s3.download_file(bucket, key, local_path)
             file_paths.append(local_path)
 
-    print(f"✅ Downloaded {len(file_paths)} FITS files")
+    print(f"Downloaded {len(file_paths)} FITS files")
     save_log_to_s3(session_id, "download_summary", f"Downloaded {len(file_paths)} FITS files")
 
     output_files, skipped_files = process_fits_info(file_paths, bucket, session_id)
