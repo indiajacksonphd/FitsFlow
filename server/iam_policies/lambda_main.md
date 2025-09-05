@@ -27,44 +27,30 @@ This role powers the `FitsFlow-Trigger` Lambda. It requires access to CloudWatch
 
 ```json
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:GetObject"
-            ],
-            "Resource": "arn:aws:s3:::helioconvert-sdo/temp/*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:PutObject",
-                "s3:PutObjectTagging"
-            ],
-            "Resource": "arn:aws:s3:::helioconvert-sdo/temp/*"
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:ListBucket"
-            ],
-            "Resource": "arn:aws:s3:::helioconvert-sdo",
-            "Condition": {
-                "StringLike": {
-                    "s3:prefix": [
-                        "temp/*"
-                    ]
-                }
-            }
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "lambda:InvokeFunction"
-            ],
-            "Resource": "arn:aws:lambda:us-east-1:381492215954:function:FitsFlow-2-ASDF"
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": ["s3:GetObject"],
+      "Resource": "arn:aws:s3:::<BUCKET_NAME>/temp/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": ["s3:PutObject","s3:PutObjectTagging"],
+      "Resource": "arn:aws:s3:::<BUCKET_NAME>/temp/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": ["s3:ListBucket"],
+      "Resource": "arn:aws:s3:::<BUCKET_NAME>",
+      "Condition": { "StringLike": { "s3:prefix": ["temp/*"] } }
+    },
+    {
+      "Effect": "Allow",
+      "Action": ["lambda:InvokeFunction"],
+      "Resource": "arn:aws:lambda:<REGION>:<ACCOUNT_ID>:function:<ASDF_FUNCTION_NAME>"
+    }
+  ]
 }
+
 ```
