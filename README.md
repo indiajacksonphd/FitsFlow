@@ -26,7 +26,7 @@ FitsFlow is a browser-based application that takes a solar FITS image and return
 ## 1. System Architecture
 [insert PNG diagram here]
 
-<img width="811" height="633" alt="Screenshot 2025-09-05 at 5 41 22 PM" src="https://github.com/user-attachments/assets/4403f8b9-ace5-4fe7-8d4f-3ce2b1e809e1" />
+<center><img width="811" height="633" alt="Screenshot 2025-09-05 at 5 41 22 PM" src="https://github.com/user-attachments/assets/4403f8b9-ace5-4fe7-8d4f-3ce2b1e809e1" /></center>
 
 
 
