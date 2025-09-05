@@ -30,7 +30,7 @@ def download_videos(date_str, download_dir):
                     for chunk in r.iter_content(chunk_size=8192):
                         f.write(chunk)
                 downloaded.append(filepath)
-                print(f"✔️ Downloaded: {filename}")
+                print(f"Downloaded: {filename}")
             else:
                 print(f"Not found: {filename}")
         except Exception as e:
