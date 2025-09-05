@@ -3,7 +3,7 @@ import os, json, urllib.parse, boto3
 s3 = boto3.client("s3")
 lambda_client = boto3.client("lambda")
 
-BUCKET = "helioconvert-sdo"
+BUCKET = "<BUCKET_NAME>"
 MAIN_FUNCTION = "FitsFlow-2"
 
 def lambda_handler(event, _ctx):
