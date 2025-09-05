@@ -10,8 +10,6 @@ This folder documents the IAM policies required for each AWS service used by Fit
 - [CloudFront OAC](cloudfront_oac.md)
 - [API Gateway](api_gateway.md)
 - [EventBridge](eventbridge.md)
-- [KMS](kms.md)
 - [CloudWatch Logs](cloudwatch_logs.md)
 - [Route 53](route53.md)
-- [WAF (optional)](waf.md)
-- [SSM Parameters (optional)](ssm_parameters.md)
+
