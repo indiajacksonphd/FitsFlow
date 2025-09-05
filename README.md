@@ -26,6 +26,7 @@ FitsFlow is a browser-based application that takes a solar FITS image and return
 ## 1. System Architecture
 [insert PNG diagram here]
 
+<img width="203" height="159" alt="Screenshot 2025-09-05 at 5 31 02 PM" src="https://github.com/user-attachments/assets/71e5a508-ac1f-41c3-989c-f27b7587c609" />
 
 
 - AWS services: Lambda, API Gateway, S3, CloudFront, Route 53
