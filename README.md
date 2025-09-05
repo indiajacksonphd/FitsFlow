@@ -10,6 +10,11 @@ In simple terms:
 
 That’s it — FitsFlow connects all the dots so researchers, educators, and the public can use solar data without special software.  
 
+<p align="center">
+  <a href="https://youtu.be/6J0IHxmNrg8?si=E2_0lrwMLrccvFSm" target="_blank">
+  </a>
+</p>
+
 ---
 
 ## Want the full technical breakdown?
