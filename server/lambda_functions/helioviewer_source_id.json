@@ -1,0 +1,47 @@
+[
+    {"source_id": 18, "description": "HMI_Int", "observatory": "SDO", "instrument": "HMI", "measurement": "continuum"},
+    {"source_id": 19, "description": "HMI_Mag", "observatory": "SDO", "instrument": "HMI", "measurement": "magnetogram"},
+    {"source_id": 17, "description": "AIA_4500", "observatory": "SDO", "instrument": "AIA", "measurement": "4500"},
+    {"source_id": 16, "description": "AIA_1700", "observatory": "SDO", "instrument": "AIA", "measurement": "1700"},
+    {"source_id": 15, "description": "AIA_1600", "observatory": "SDO", "instrument": "AIA", "measurement": "1600"},
+    {"source_id": 14, "description": "AIA_335", "observatory": "SDO", "instrument": "AIA", "measurement": "335"},
+    {"source_id": 13, "description": "AIA_304", "observatory": "SDO", "instrument": "AIA", "measurement": "304"},
+    {"source_id": 12, "description": "AIA_211", "observatory": "SDO", "instrument": "AIA", "measurement": "211"},
+    {"source_id": 11, "description": "AIA_193", "observatory": "SDO", "instrument": "AIA", "measurement": "193"},
+    {"source_id": 10, "description": "AIA_171", "observatory": "SDO", "instrument": "AIA", "measurement": "171"},
+    {"source_id": 9, "description": "AIA_131", "observatory": "SDO", "instrument": "AIA", "measurement": "131"},
+    {"source_id": 8, "description": "AIA_94", "observatory": "SDO", "instrument": "AIA", "measurement": "94"},
+  
+    {"source_id": 1, "description": "EIT_195", "observatory": "SOHO", "instrument": "EIT", "measurement": "195"},
+    {"source_id": 3, "description": "EIT_304", "observatory": "SOHO", "instrument": "EIT", "measurement": "304"},
+    {"source_id": 2, "description": "EIT_284", "observatory": "SOHO", "instrument": "EIT", "measurement": "284"},
+    {"source_id": 0, "description": "EIT_171", "observatory": "SOHO", "instrument": "EIT", "measurement": "171"},
+    {"source_id": 7, "description": "MDI_Int", "observatory": "SOHO", "instrument": "MDI", "measurement": "continuum"},
+    {"source_id": 6, "description": "MDI_Mag", "observatory": "SOHO", "instrument": "MDI", "measurement": "magnetogram"},
+    {"source_id": 4, "description": "LASCO_C2", "observatory": "SOHO", "instrument": "LASCO", "measurement": "C2 white-light"},
+    {"source_id": 5, "description": "LASCO_C3", "observatory": "SOHO", "instrument": "LASCO", "measurement": "C3 white-light"},
+  
+    {"source_id": 23, "description": "EUVI-A_304", "observatory": "STEREO_A", "instrument": "EUVI", "measurement": "304"},
+    {"source_id": 22, "description": "EUVI-A_284", "observatory": "STEREO_A", "instrument": "EUVI", "measurement": "284"},
+    {"source_id": 21, "description": "EUVI-A_195", "observatory": "STEREO_A", "instrument": "EUVI", "measurement": "195"},
+    {"source_id": 20, "description": "EUVI-A_171", "observatory": "STEREO_A", "instrument": "EUVI", "measurement": "171"},
+    {"source_id": 28, "description": "COR1-A", "observatory": "STEREO_A", "instrument": "COR1", "measurement": "white-light"},
+    {"source_id": 29, "description": "COR2-A", "observatory": "STEREO_A", "instrument": "COR2", "measurement": "white-light"},
+  
+    {"source_id": 25, "description": "EUVI-B_195", "observatory": "STEREO_B", "instrument": "EUVI", "measurement": "195"},
+    {"source_id": 26, "description": "EUVI-B_284", "observatory": "STEREO_B", "instrument": "EUVI", "measurement": "284"},
+    {"source_id": 27, "description": "EUVI-B_304", "observatory": "STEREO_B", "instrument": "EUVI", "measurement": "304"},
+    {"source_id": 24, "description": "EUVI-B_171", "observatory": "STEREO_B", "instrument": "EUVI", "measurement": "171"},
+    {"source_id": 30, "description": "COR1-B", "observatory": "STEREO_B", "instrument": "COR1", "measurement": "white-light"},
+    {"source_id": 31, "description": "COR2-B", "observatory": "STEREO_B", "instrument": "COR2", "measurement": "white-light"},
+  
+    {"source_id": 32, "description": "SWAP_174", "observatory": "PROBA2", "instrument": "SWAP", "measurement": "174"},
+  
+    {"source_id": 2000, "description": "SUVI_94", "observatory": "GOES", "instrument": "SUVI", "measurement": "94"},
+    {"source_id": 2001, "description": "SUVI_131", "observatory": "GOES", "instrument": "SUVI", "measurement": "131"},
+    {"source_id": 2002, "description": "SUVI_171", "observatory": "GOES", "instrument": "SUVI", "measurement": "171"},
+    {"source_id": 2003, "description": "SUVI_195", "observatory": "GOES", "instrument": "SUVI", "measurement": "195"},
+    {"source_id": 2004, "description": "SUVI_284", "observatory": "GOES", "instrument": "SUVI", "measurement": "284"},
+    {"source_id": 2005, "description": "SUVI_304", "observatory": "GOES", "instrument": "SUVI", "measurement": "304"}
+  ]
+  
