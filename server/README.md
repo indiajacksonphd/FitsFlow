@@ -4,10 +4,8 @@
 
 Contents:
 - `lambda/` — Lambda functions  
-- `worker/` — EC2 worker code (triggered via SSM)  
-- `lambda_layers/` — downloadable dependency ZIPs  
-- `permissions/` — IAM JSONs, CORS configs, backend_services.md  
-- `infra/` — SAM/CDK/Terraform templates  
+- `lambda_layers/` — downloadable dependency ZIPs including EC2 worker code
+- `iam_policies/` — IAM JSONs, CORS configs, backend_services.md  
 
 Add a **server/README.md**:
 
