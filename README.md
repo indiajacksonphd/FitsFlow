@@ -58,15 +58,7 @@ FitsFlow is a browser-based application that takes a solar FITS image and return
 
 ## 6. Research Outputs
 ### Conferences
-- AGU Fall Meeting 2025 (session SH005)
-- Dragon Con 2025, Space Track demo
-- SPD Anchorage 2025
-- AAS Congressional Visits Day 2025
-
-### Publications
-- Paper I (HelioConverter) – to *Space Weather*
-- Paper II (SEPStream) – to *Space Weather*
-- Fits2ASDF file format paper – to *Earth and Space Science*
-- Policy paper on radiation & human health – in prep
-
-See [citations.bib](./architecture-and-research/citations.bib) for BibTeX entries.
+- **Dragon Con 2025** — Space Track  
+- **Science and Cyberinfrastructure for Discovery 2025**  
+- **Data, Analysis, and Software in Heliophysics 2025**  
+- **AGU Fall Meeting 2025** — Session SH005: *Reusable AI Infrastructure in Heliophysics*
