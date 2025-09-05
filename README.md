@@ -16,11 +16,6 @@ That’s it — FitsFlow connects all the dots so researchers, educators, and th
 - [Section 2 — Client Side](client/) (frontend code & design)  
 - [Section 3 — Server Side](server/) (AWS services, IAM permissions, CORS, Lambda, EC2)  
 
-
-# FitsFlow
-
-FitsFlow is a browser-based application that takes a solar FITS image and returns machine-learning-ready outputs.
-
 ---
 
 ## 1. System Architecture
@@ -29,7 +24,7 @@ FitsFlow is a browser-based application that takes a solar FITS image and return
 
 
 
-- AWS services: Lambda, API Gateway, S3, CloudFront, Route 53
+- AWS services: Lambda, API Gateway, S3, CloudFront, Route 53, EC2
 - External APIs: HEK, JSOC, Helioviewer
 - Outputs: images, metadata, ASDF, manifest files
 
