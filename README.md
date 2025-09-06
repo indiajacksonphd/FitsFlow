@@ -1,4 +1,5 @@
-# FitsFlow
+# FitsFlow | [![DOI](https://zenodo.org/badge/1044586127.svg)](https://doi.org/10.5281/zenodo.17069413)
+
 
 [![DOI](https://zenodo.org/badge/1044586127.svg)](https://doi.org/10.5281/zenodo.17069413)
 
