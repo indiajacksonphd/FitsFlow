@@ -8,7 +8,11 @@ In simple terms:
 3. The system processes everything in the cloud.  
 4. You get back a single "manifest" file and outputs (images, metadata, ASDF).  
 
-That’s it — FitsFlow connects all the dots so researchers, educators, and the public can use solar data without special software.  
+FitsFlow connects all the dots so researchers, educators, and the public can use solar data without special software.  
+
+Click here to access [FitsFlow](https://www.fitsflow.org)!
+
+Click below to check out a demo!
 
 <p align="center">
   <a href="https://youtu.be/6J0IHxmNrg8?si=E2_0lrwMLrccvFSm" target="_blank">
