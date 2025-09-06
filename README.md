@@ -59,7 +59,7 @@ That’s it — FitsFlow connects all the dots so researchers, educators, and th
 - Queueing for EC2 if workloads expand
 
 ## 6. Research Outputs
-- **Dragon Con 2025** — [Space & Science Tracks](https://app.core-apps.com/dragoncon25/speakers/)  
+- **Dragon Con 2025** — [Space & Science Tracks](https://app.core-apps.com/dragoncon25/speakers/aadbab04df55073681678e0c579dbd8d)  
 - **Science and Cyberinfrastructure for Discovery 2025** — *[Session 4: Lightning Talks](https://arctic.gsu.edu/training/scd/#lightning-talks)*  
 - **Data, Analysis, and Software in Heliophysics 2025** — (session details pending)  
 - **AGU Fall Meeting 2025** — Session SH032: *[The Long Way: Heliosphere Modeling with Operations in Mind](https://agu.confex.com/agu/agu25/webprogrampreliminary/Session251735.html)*  
