@@ -67,3 +67,8 @@ Click below to check out a demo!
 - **Science and Cyberinfrastructure for Discovery 2025** — *[Session 4: Lightning Talks](https://arctic.gsu.edu/training/scd/#lightning-talks)*  
 - **Data, Analysis, and Software in Heliophysics 2025** — (session details pending)  
 - **AGU Fall Meeting 2025** — Session SH032: *[The Long Way: Heliosphere Modeling with Operations in Mind](https://agu.confex.com/agu/agu25/webprogrampreliminary/Session251735.html)*  
+
+---
+
+## Acknowledgements
+FitsFlow is supported by the **National Science Foundation (NSF) Atmospheric and Geospace Sciences Postdoctoral Fellowship (AGS-PRF Award #2444918)**.  
