@@ -52,6 +52,24 @@ Click below to check out a demo!
 - Short-lived presigned URLs
 - CloudFront + WAF rate limiting
 
+## 3.1 Web Accessibility & Categorization
+
+To ensure FitsFlow is accessible in schools, universities, and government research labs,  
+the domain has been submitted to major web filtering providers for categorization as an **educational and scientific resource**.  
+
+### Current Status
+- **Blue Coat / Symantec** → Education  
+- **Forcepoint Security Labs** → Education – Educational Materials  
+- **Cisco Talos Intelligence** → Education; Science & Technology  
+- **McAfee / Trellix** → Education  
+- **Palo Alto Networks** → Computer-and-Internet-Info  
+- **Fortinet** → (Pending, requested Education)  
+- **Trend Micro** → (Pending, requested Education)
+
+These categories prevent FitsFlow from being flagged as “Unrated” or “Newly Registered” and ensure it is recognized as an **NSF-funded open science platform** for research and education.  
+
+> _Note:_ Web reputation scores will build organically as FitsFlow gains users across the heliophysics and education communities.
+
 ## 4. Threat Model
 - Risks: unauthorized uploads, presign abuse, cost spikes
 - Mitigations: lifecycle rules, cost anomaly detection, throttling
