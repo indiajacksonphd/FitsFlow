@@ -9,7 +9,8 @@ Each layer is packaged as a `.zip` archive and can be attached to a Lambda funct
 
 ### 1. AWS SDK for Pandas
 - **Purpose**: Provides the [AWS SDK for Pandas](https://aws-sdk-pandas.readthedocs.io/en/3.9.1/layers.html) (previously `awswrangler`) for efficient data handling within Lambdas.  
-- **Source**: [GitHub – aws/aws-sdk-pandas](https://github.com/aws/aws-sdk-pandas)  
+- **Source**: [GitHub – aws/aws-sdk-pandas](https://github.com/aws/aws-sdk-pandas)
+- **Specific ARN** : arn:aws:lambda:us-east-1:336392948345:layer:AWSSDKPandas-Python310:25
 
 ---
 
