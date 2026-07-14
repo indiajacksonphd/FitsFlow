@@ -1,6 +1,6 @@
 # FitsFlow | [![DOI](https://zenodo.org/badge/1044586127.svg)](https://doi.org/10.5281/zenodo.17069413)
 
-FitsFlow is a browser-based application that takes a solar FITS image and returns machine-learning ready outputs.  
+FitsFlow is a browser-based application that takes a solar FITS image and returns machine learning ready outputs.  
 
 In simple terms:  
 1. You upload a FITS file in your browser.  
